@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>All Incidents</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+  <h2>Incident Dashboard 📋</h2>
+
+  <a href="/incidents/add" class="btn-edit">+ Add New Incident</a>
+
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Severity</th>
+      <th>Status</th>
+      <th>Reported By</th>
+      <th>Actions</th>
+    </tr>
+    <tr th:each="inc : ${incidents}">
+      <td th:text="${inc.id}"></td>
+      <td th:text="${inc.title}"></td>
+      <td th:text="${inc.severity}"></td>
+      <td th:text="${inc.status}"></td>
+      <td th:text="${inc.reportedBy}"></td>
+      <td>
+        <a th:href="@{/incidents/view/{id}(id=${inc.id})}" class="btn-edit">View</a>
+        <a th:href="@{/incidents/edit/{id}(id=${inc.id})}" class="btn-back">Edit</a>
+        <a th:href="@{/incidents/delete/{id}(id=${inc.id})}" class="btn-delete"
+           onclick="return confirm('Are you sure to delete this incident?')">Delete</a>
+      </td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Incident</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+  <h2>Edit Incident ✏</h2>
+
+  <form th:action="@{'/incidents/update/' + ${incident.id}}" th:object="${incident}" method="post">
+    <label>Title:</label>
+    <input type="text" th:field="*{title}" required>
+
+    <label>Description:</label>
+    <textarea th:field="*{description}" required></textarea>
+
+    <label>Severity:</label>
+    <select th:field="*{severity}">
+      <option value="Low">Low</option>
+      <option value="Medium">Medium</option>
+      <option value="High">High</option>
+    </select>
+
+    <label>Status:</label>
+    <select th:field="*{status}">
+      <option value="Open">Open</option>
+      <option value="In Progress">In Progress</option>
+      <option value="Closed">Closed</option>
+    </select>
+
+    <label>Reported By:</label>
+    <input type="text" th:field="*{reportedBy}" required>
+
+    <button type="submit">✅ Update Incident</button>
+    <a th:href="@{/incidents}" class="btn-back">⬅ Back</a>
+  </form>
+</div>
+</body>
+</html>

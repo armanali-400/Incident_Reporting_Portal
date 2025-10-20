@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>View Incident</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+  <h2>Incident Details 🧾</h2>
+
+  <p><strong>Title:</strong> <span th:text="${incident.title}"></span></p>
+  <p><strong>Description:</strong> <span th:text="${incident.description}"></span></p>
+  <p><strong>Severity:</strong> <span th:text="${incident.severity}"></span></p>
+  <p><strong>Status:</strong> <span th:text="${incident.status}"></span></p>
+  <p><strong>Reported By:</strong> <span th:text="${incident.reportedBy}"></span></p>
+  <p><strong>Reported On:</strong> <span th:text="${incident.createdAt}"></span></p>
+
+  <a th:href="@{/incidents}" class="btn-back">⬅ Back</a>
+  <a th:href="@{'/incidents/edit/' + ${incident.id}}" class="btn-edit">✏ Edit</a>
+</div>
+</body>
+</html>

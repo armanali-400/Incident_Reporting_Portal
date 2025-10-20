@@ -1,0 +1,136 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(120deg, #e3f2fd, #e1bee7);
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 700px;
+  margin: 30px auto;
+  background: white;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+/* ---------- Form ---------- */
+form label {
+  font-weight: 600;
+  display: block;
+  margin-top: 12px;
+  color: #444;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  transition: 0.3s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 6px rgba(0,123,255,0.3);
+  outline: none;
+}
+
+button {
+  width: 100%;
+  background: #007bff;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+/* ---------- Links ---------- */
+a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+a.btn-back, a.btn-edit, a.btn-delete {
+  display: inline-block;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
+  margin-top: 10px;
+  text-align: center;
+}
+
+a.btn-back {
+  background: #6c757d;
+  color: white;
+}
+
+a.btn-edit {
+  background: #28a745;
+  color: white;
+}
+
+a.btn-delete {
+  background: #dc3545;
+  color: white;
+}
+
+a.btn-back:hover { background: #5a6268; }
+a.btn-edit:hover { background: #218838; }
+a.btn-delete:hover { background: #c82333; }
+
+/* ---------- Table ---------- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  text-align: center;
+  padding: 6px;
+}
+
+th {
+  background: #007bff;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background: #f2f2f2;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+    margin: 10px;
+  }
+  table, th, td {
+    font-size: 14px;
+  }
+  button, a.btn-back, a.btn-edit, a.btn-delete {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
